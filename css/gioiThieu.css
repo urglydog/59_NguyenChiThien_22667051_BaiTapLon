@@ -1,0 +1,21 @@
+[class*=col-]{
+    padding: 0px;
+    margin: 0px auto;
+}
+*{
+    padding: 0px;
+    margin: 0px auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.row.header{
+    height: 800px;
+}
+.carousel-item img {
+    height: 800px; /* Đặt chiều cao cố định cho ảnh */
+    object-fit: cover; /* Đảm bảo ảnh không bị biến dạng khi điều chỉnh kích thước */
+    width: 100%; /* Đảm bảo ảnh có chiều rộng 100% của container */
+}
+.contact input{
+    height: 50px;
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens - Home page</title>
+    <link rel="stylesheet" href="../libs/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../libs/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="../css/home.css"> <!-- Liên kết với file CSS của bạn -->
+    <script src="../libs/bootstrap-5.1.3-dist/js/jquery-3.7.1.min.js"></script>
+    <script src="../libs/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
+</head>
+
+<body>
+    <!-- logo -->
+    <div class="container-fluid ">
+        <div class="row logo">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <img src="/img/Logo/logo.jpg" id="logo-image">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h1 id="logo-title" class="logo ">Since 1986</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+
+            </div>
+        </div>
+    </div>
+    <!-- login -->
+    <div id="login-place" class="container-fluid">
+        <div class="row login">
+            <div class="col-md-6">
+                <div style="width: 100%; height: 70%;" class="row">
+                    <div class="col-md-12">
+                        <img id="rong" src="/img/Logo/rông.jpg" alt="">
+                    </div>
+
+                </div>
+                <div style="width: 100%; height: 30%;" class="row">
+                    <div class="col-md-12">
+                        <h1 id="slogan" class="text-light text-center mt-5  ">Fashion-Modern</h1>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form id="form-dangnhap" class="form">
+                    <h1 class="text-center ">Đăng nhập</h1>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email/Số điện thoại/Tên đăng nhập" id="txtemail-dn">
+                    </div>
+                    <div class="form-group">
+                        <span id="loiDangNhap"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="txtmk-dn" placeholder="Mật khẩu">
+                    </div>
+                    <div class="form-group">
+                        <button id="btn-dn" type="button" class="btn btn-danger ">Đăng nhập</button>
+                    </div>
+                    <div id="forgot" class="form-group">
+                        <div class="row">
+                            <div class="col-md-6"><a href="#" style="text-decoration: none;">Quên mật khẩu</a></div>
+                            <div class="col-md-6"><a href="#" style="text-decoration: none;">Đăng nhập với SMS</a></div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center ">
+                        <span class="text-center">Hoặc</span>
+                    </div>
+                    <div id="fb-gg" class="form-group">
+                        <div>
+                            <button class="fb">
+                                <i style="color: blue;" class="ti-facebook ">Face book</i>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="gg">
+                                <i style="color: red;" class="ti-google ">Gooble</i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="No-acc" class="form-group">
+                        <label>Bạn chưa có tài khoản ?</label>
+                        <button type="button" class="btn text-danger " data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Đăng kí
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal " id="exampleModal">
+        <div class="modal-dialog">
+            <div style="width: 800px; height: 900px;" class="modal-content">
+                <div class="modal-header text-light ">
+                    <h5 class="modal-title" id="exampleModalLabel">Đăng kí tài khoản</h5>
+                    <button type="button" class="btn-close text-light " data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-dktk" style="height: 500px;" action="" class="form">
+                        <!-- thông tin đăng kí  -->
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Tên tài khoản</label>
+                            <input id="txttentaikhoan" type="text">
+                            <span id="loitentaikhoan">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Mật khẩu</label>
+                            <input id="txtmk" type="password">
+                            <span id="loimk">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Xác nhận lại mật khẩu</label>
+                            <input id="txtxnmk" type="password">
+                            <span id="loixnmk">*</span>
+                        </div>
+                        <!-- thông tin cá nhân -->
+                        <div class="form-group">
+                            <h3 class="text-center text-light ">Thông tin cá nhân</h3>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Họ tên</label>
+                            <input id="txthoten" type="text">
+                            <span id="loihoten">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Giới tính</label>
+                            <input style="width: 50px; height: 20px;" type="radio" name="gt" id="gtNam" value="Nam">
+                            <label style="width: 90px;" for="nam">Nam</label>
+                            <input style="width: 50px; height: 20px;" type="radio" name="gt" id="gtNu" value="Nữ">
+                            <label style="width: 90px;" for="nu">Nữ</label>
+                            <span id="loiGt">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Email</label>
+                            <input id="txtemail" type="email">
+                            <span id="loiemail"></span>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Số điện thoại</label>
+                            <input type="tel" id="txtsdt">
+                            <span id="loisdt">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Địa chỉ</label>
+                            <input type="text" id="txtdiachi">
+                            <span id="loidiachi">*</span>
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: bold;" class="">Ảnh đại diện</label>
+                            <input style="width: 300px;" type="file" id="avatar" accept=".png,.jpg,.gif,.JPG,.PNG,.GIF">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="btn-dk" type="button" class="btn btn-primary">Đăng kí</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal  -->
+</body>
+
+</html>

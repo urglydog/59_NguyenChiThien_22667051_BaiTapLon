@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Information</title>
+    <link rel="stylesheet" href="../libs/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script src="../libs/bootstrap-5.1.3-dist/js/jquery-3.7.1.min.js"></script>
+    <script src="../libs/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <style>
+        [class*=col-] {
+            padding: 0px;
+            margin: 0px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <tr>
+                        <th colspan="6" class="text-center ">THÔNG TIN CÁ NHÂN</th>
+                    </tr>
+                    <tr>
+                        <td class="text-center ">Họ và tên</td>
+                        <td class="text-center ">Giới tính</td>
+                        <td class="text-center ">Email</td>
+                        <td class="text-center ">Số điện thoại</td>
+                        <td class="text-center ">Địa chỉ</td>
+                        <td class="text-center ">Ảnh đại diện</td>
+                    </tr>
+                    <tr>
+                        <td id="hoten"></td>
+                        <td id="gioitinh"></td>
+                        <td id="email"></td>
+                        <td id="sodienthoai"></td>
+                        <td id="diachi"></td>
+                        <td id="anhdaidien"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("hoten").innerHTML = localStorage.getItem("hoten");
+        document.getElementById("gioitinh").innerHTML = localStorage.getItem("gioitinh");
+        document.getElementById("email").innerHTML = localStorage.getItem("email");
+        document.getElementById("sodienthoai").innerHTML = localStorage.getItem("sodienthoai");
+        document.getElementById("diachi").innerHTML = localStorage.getItem("diachi");
+        document.getElementById("anhdaidien").innerHTML = localStorage.getItem("anhdaidien");
+       
+    </script>
+</body>
+
+</html>

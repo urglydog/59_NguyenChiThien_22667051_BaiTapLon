@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <link rel="stylesheet" href="../libs/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <script src="../libs/bootstrap-5.1.3-dist/js/jquery-3.7.1.min.js"></script>
+    <script src="../libs/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+    <script src="../js/shop.js"></script>
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../libs/themify-icons/themify-icons.css">
+    <script src="../js/GioHang.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid  ">
+        <!-- header  -->
+        <div class="row header">
+            <div class="row logo sticky-top ">
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <img src="/img/Logo/logo.jpg" id="logo-image">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <h1 id="logo-title" class="logo ">Since 1986</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- navigation  -->
+        <div class="row nav sticky-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../html/Ao.html">Trang chủ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row mt-5">
+                <h1 class="text-danger text-center ">Giỏ hàng</h1>
+            </div>
+
+            <div class="row mt-5">
+                <table class="table table-bordered ">
+                    <thead>
+                        <th>Tên sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                    </thead>
+                    <tbody id="cartTableBody">
+                        <tr>
+                            <td id="name"></td>
+                            <td id="price"></td>
+                            <td id="quantity"></td>
+                            <td id="total"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div style="text-align: center;" class="col-md-6"><label>Tổng tiền</label></div>
+                    <div class="col-md-6"><input style="margin-left: 753px;" type="text" disabled id="totalDue"></div>
+                </div>
+                <div class="row">
+                    <div style="text-align: center;" class="col-md-6"><label>Hình thức thanh toán: <input type="radio"
+                                id="cash" name="pay" value="Cash"> Tiền mặt <input type="radio" id="Credic card"
+                                name="pay" value="Credic card"> Tài
+                            khoản ngân hàng</label></div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                            type="button" id="btn-tt" onclick="clearCart()">Thanh
+                            toán</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 700px;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Hóa đơn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="width: 500px;">
+                    <div class="row">
+                        <lable>Ngày: <label id="date"></label></lable>
+                        <label>Mã hóa đơn: <input type="text" id="maHD"> </label>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <table class="table  ">
+                            <thead>
+                                <th>Tên sản phẩm</th>
+                                <th>Giá(Bao gồm VAT)</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                            </thead>
+                            <tbody id="SaleOrderHeader">
+                                <tr>
+                                    <td id="name-hd"></td>
+                                    <td id="price-hd"></td>
+                                    <td id="quantity-hd"></td>
+                                    <td id="total-hd"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <div class="col-md-6">Tổng tiền: <input type="text" style="border: 1px solid white; "
+                                    id="totalDue-hd" disabled></div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">Hình thức thanh toán: <input type="text"
+                                    style="border: 1px solid white; " id="pay-way" disabled></div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">Trạng thái: Đã thanh toán</div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Lấy giỏ hàng từ localStorage
+    var cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Lấy tbody của bảng giỏ hàng
+    var cartTableBody = document.getElementById("cartTableBody");
+
+    // Hiển thị thông tin của từng sản phẩm trong giỏ hàng
+    cart.forEach(function (item) {
+        var row = document.createElement("tr");
+        var nameCell = document.createElement("td");
+        var priceCell = document.createElement("td");
+        var quantityCell = document.createElement("td");
+        var totalCell = document.createElement("td");
+
+        nameCell.textContent = item.name;
+        priceCell.textContent = item.price;
+        quantityCell.textContent = item.quantity;
+        totalCell.textContent = item.price * item.quantity;
+
+        row.appendChild(nameCell);
+        row.appendChild(priceCell);
+        row.appendChild(quantityCell);
+        row.appendChild(totalCell);
+
+        cartTableBody.appendChild(row);
+    });
+    // tính tổng tiền trên giỏ hàng
+    function tinhTongTien() {
+        var tongTien = 0;
+        // Lặp qua từng hàng trong tbody của bảng giỏ hàng, bắt đầu từ dòng thứ hai
+        var rows = document.querySelectorAll("#cartTableBody tr:not(:first-child)");
+        rows.forEach(function (row) {
+            // Lấy giá trị từ ô "Thành tiền" của từng hàng
+            var total = parseFloat(row.querySelector("td:nth-child(4)").textContent);
+            // Cộng giá trị vào tổng tiền
+            tongTien += total;
+        });
+        return tongTien;
+    }
+
+    // Gọi hàm tính tổng tiền và hiển thị kết quả trong ô tổng tiền
+    var tongtien = tinhTongTien().toFixed(2) + "$";
+    var totalDueInput = document.getElementById("totalDue");
+    totalDueInput.value = tongtien;
+
+    // sau khi ấn thanh toán, giỏ hàng rỗng, đồng thời đẩy dữ liệu lên hóa đơn
+    function clearCart() {
+        // Xóa tất cả các hàng, bắt đầu từ dòng thứ hai
+        var rows = document.querySelectorAll("#cartTableBody tr:not(:first-child)");
+        rows.forEach(function (row) {
+            row.remove();
+        });
+
+        // Đặt lại giá trị của ô tổng tiền thành 0
+        document.getElementById("totalDue").value = "0$";
+
+        // đẩy dữ liệu từ localSstorage lên hóa đơn giống như cách đẩy lên giỏ hàng
+        cart.forEach(function (item) {
+            var row = document.createElement("tr");
+            var nameCell = document.createElement("td");
+            var priceCell = document.createElement("td");
+            var quantityCell = document.createElement("td");
+            var totalCell = document.createElement("td");
+
+            nameCell.textContent = item.name;
+            priceCell.textContent = item.price;
+            quantityCell.textContent = item.quantity;
+            totalCell.textContent = item.price * item.quantity;
+
+            row.appendChild(nameCell);
+            row.appendChild(priceCell);
+            row.appendChild(quantityCell);
+            row.appendChild(totalCell);
+
+            // Thêm dòng vào tbody của modal hóa đơn
+            document.getElementById("SaleOrderHeader").appendChild(row);
+        });
+
+        // Lấy ngày cho hóa đơn là ngày hiện tại
+        var currentDate = new Date();
+        var currentDateString = currentDate.toLocaleDateString();
+        document.getElementById("date").textContent = currentDateString;
+
+        // phát sinh mã hóa đơn
+        var maHoaDon = document.getElementById("maHD");
+        maHoaDon.value = genarateMaHD();
+
+        // Cập nhật tổng tiền trong modal hóa đơn
+        var totalDueInputHD = document.getElementById("totalDue-hd");
+        totalDueInputHD.value = tongtien;
+
+        // Đặt giá trị hình thức thanh toán trong modal hóa đơn
+        var hinhthucthanhtoan = $("input[name='pay']:checked").val();
+        document.getElementById("pay-way").value = hinhthucthanhtoan;
+
+        // Sau khi xóa hết các hàng, cũng cần xóa dữ liệu trong localStorage
+        localStorage.removeItem("cart");
+    }
+
+    // hàm tạo mã hóa đơn
+    var cnt = 0;
+    function genarateMaHD() {
+        result = "HD" + pad(cnt, 5);
+        cnt++;
+
+        return result;
+    }
+    function pad(num, size) {
+        var s = num + "";
+        while (s.length < size) {
+            s = "0" + s;
+        }
+        return s;
+    }
+</script>
+
+</html>

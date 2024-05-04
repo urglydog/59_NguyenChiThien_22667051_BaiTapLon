@@ -1,0 +1,89 @@
+[class*=col-]{
+    padding: 0px;
+    margin: 0px auto;
+}
+*{
+    padding: 0px;
+    margin: 0px auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+#logo-image{
+    height: 200px;
+}
+#logo-title{
+    height: 200px;
+    line-height:200px;
+}
+#login-place{
+    height: 900px;
+    width: 100%;
+    background-color: #0C0A0B;
+}
+.form{
+    background-color: white;
+    height: 800px;
+    width: 600px;
+    margin-top: 50px;
+}
+#fb-gg{
+    display: flex;
+}
+.fb,.gg{
+    padding: 5px;
+    margin-top: 20px;
+    width: 200px;
+}
+#form-dangnhap #txtemail-dn,#form-dangnhap #txtmk-dn,#form-dangnhap #btn-dn,#form-dangnhap #forgot{
+    width: 90%;
+    height: 50px;
+    margin-top: 70px;
+    margin-left: 30px;
+}
+#forgot a{
+    margin-left: 70px;
+}
+#No-acc{
+    margin-top: 50px;
+    display: flex;
+}
+#No-acc label,#No-acc button{
+    width: 50%;
+    text-align: center;
+}
+#rong{
+    height: 100%;
+    margin-left: 250px;
+    align-items: center;
+}
+
+#form-dktk .form-group{
+    margin-top: 20px;
+}
+#form-dktk label{
+    width: 250px;
+    color: white;
+}
+#form-dktk input{
+    width: 300px;
+    height: 35px;
+}
+#form-dktk input:hover{
+    background-color: wheat;
+}
+span{
+    color: white !important;
+}
+#loiDangNhap{
+    color: red !important;
+}
+.modal-content{
+    background-color: #1E1C43;
+    box-shadow: 0px 0px 20px whitesmoke;
+}
+#form-dktk{
+    background-color: #1E1C43;
+}
+
+
+

@@ -1,0 +1,69 @@
+[class*=col-] {
+    padding: 0px;
+    margin: 0px auto;
+}
+
+* {
+    padding: 0px;
+    margin: 0px auto;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.header {
+    position: sticky;
+}
+
+#logo-image {
+    height: 200px;
+}
+
+#logo-title {
+    height: 200px;
+    line-height: 200px;
+}
+
+.card {
+    margin: 40px;
+    position: relative;
+}
+
+.card .discount {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: red !important;
+    background-color: rgb(240, 211, 138);
+}
+
+
+.col-md-6 p {
+    text-align: center;
+    color: red;
+}
+
+.col-md-6 del {
+    margin-left: 50px;
+}
+
+.card-title {
+    height: 50px;
+}
+
+.daban {
+    font-size: 15px;
+    margin-left: 50px;
+}
+
+.nav.sticky-top {
+    position: sticky;
+    top: 0;
+    
+}
+#navbarSupportedContent .nav-item:hover .nav-link
+{
+    color: red;
+}
+.nav-item{
+    margin: 0px 60px;
+}
